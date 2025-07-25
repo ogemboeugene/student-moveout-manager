@@ -69,10 +69,10 @@ try {
     echo "✅ <strong>Database connection successful!</strong><br>";
     
     // Test a simple query
-    $stmt = $pdo->query("SELECT VERSION() as version, NOW() as current_time");
+    $stmt = $pdo->query("SELECT VERSION() as version, NOW() as server_time");
     $result = $stmt->fetch();
     echo "MySQL Version: " . $result['version'] . "<br>";
-    echo "Server Time: " . $result['current_time'] . "<br>";
+    echo "Server Time: " . $result['server_time'] . "<br>";
     
 } catch (PDOException $e) {
     echo "❌ <strong>Database connection failed!</strong><br>";
