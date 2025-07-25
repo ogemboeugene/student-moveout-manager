@@ -1,8 +1,8 @@
 # Use the official PHP image with Apache
 FROM php:8.2-apache
 
-# Enable mod_rewrite for URL rewriting
-RUN a2enmod rewrite
+# Enable mod_rewrite and mod_headers for URL rewriting and .htaccess support
+RUN a2enmod rewrite headers deflate expires
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -44,6 +44,9 @@ RUN echo '<Directory /var/www/html>' > /etc/apache2/conf-available/app.conf \
     && echo '    Require all granted' >> /etc/apache2/conf-available/app.conf \
     && echo '</Directory>' >> /etc/apache2/conf-available/app.conf \
     && a2enconf app
+
+# Set ServerName to suppress Apache warnings
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 # Expose port 80
 EXPOSE 80
