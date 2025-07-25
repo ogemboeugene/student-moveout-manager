@@ -17,7 +17,9 @@ A secure, web-based PHP + MySQL application to manage student move-out processes
 - bcrypt for password hashing
 - CSRF protection
 
-## Installation
+## Installation & Deployment
+
+### Local Development (XAMPP/LAMP)
 
 1. **Database Setup**
    ```sql
@@ -36,10 +38,22 @@ A secure, web-based PHP + MySQL application to manage student move-out processes
    - Ensure PHP 8+ is installed
    - Enable mod_rewrite for Apache
 
-4. **Default Admin Account**
-   - Username: `admin`
-   - Password: `admin123`
-   - **Change this immediately after first login!**
+### Cloud Deployment
+
+#### Option 1: Render + Aiven MySQL (Recommended)
+- **Hosting**: Render.com (Docker-based)
+- **Database**: Aiven MySQL (managed)
+- **Guide**: See `RENDER-DEPLOYMENT.md` for complete step-by-step instructions
+
+#### Option 2: Azure App Service + Azure Database for MySQL
+- **Hosting**: Azure App Service
+- **Database**: Azure Database for MySQL
+- **Guide**: See `HOSTING-GUIDE.md` for Azure deployment
+
+### Default Admin Account
+- Username: `admin`
+- Password: `admin123`
+- **Change this immediately after first login!**
 
 ## Directory Structure
 
