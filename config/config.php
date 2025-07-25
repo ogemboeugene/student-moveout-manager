@@ -12,11 +12,11 @@ return [
     //     'charset' => 'utf8mb4'
     // ]
     'database' => [
-        'host' => 'mysql-3404f80f-brianeugene851-bf63.c.aivencloud.com',
-        'port' => 27843,
-        'username' => 'avnadmin',
-        'password' => 'YOUR_AIVEN_PASSWORD',
-        'database' => 'defaultdb',
+        'host' => getenv('DB_HOST'),
+        'port' => getenv('DB_PORT'),
+        'username' => getenv('DB_USERNAME'),
+        'password' => getenv('DB_PASSWORD'),
+        'database' => getenv('DB_DATABASE'),
         'charset' => 'utf8mb4'
     ],
 
